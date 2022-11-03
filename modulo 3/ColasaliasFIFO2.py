@@ -16,15 +16,15 @@ class QueueError(IndexError):
 
 class Queue:
     def __init__(self):
-        self.__queue_lista = []
+        self.queue_en_lista = []
 
     def put(self, elem):
-        self.__queue_lista.append(elem)
+        self.queue_en_lista.append(elem)
 
     def get(self):
-        if len(self.__queue_lista) > 0:
-            val = self.__queue_lista[0]
-            del self.__queue_lista[0]
+        if len(self.queue_en_lista) > 0:
+            val = self.queue_en_lista[0]
+            del self.queue_en_lista[0]
             return val
         else:
             raise QueueError
@@ -32,7 +32,7 @@ class Queue:
 
 class SuperQueue(Queue):
     def isempty(self):
-        if len(self.__queue_lista) > 0:
+        if len(self.queue_en_lista) > 0:
             return False
         else:
             return True
